@@ -1,0 +1,65 @@
+package array;
+
+import java.util.Arrays; 
+import java.util.Scanner; 
+
+class Array {
+    static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int[] myArray = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+        System.out.println("\nEnter 15 numbers: \n(After each number, press enter to input.)");
+        myArray[0] = input.nextInt(); 
+        myArray[1] = input.nextInt();
+        myArray[2] = input.nextInt();
+        myArray[3] = input.nextInt();
+        myArray[4] = input.nextInt();
+        myArray[5] = input.nextInt();
+        myArray[6] = input.nextInt();
+        myArray[7] = input.nextInt();
+        myArray[8] = input.nextInt();
+        myArray[9] = input.nextInt();
+        myArray[10] = input.nextInt();
+        myArray[11] = input.nextInt();
+        myArray[12] = input.nextInt();
+        myArray[13] = input.nextInt();
+        myArray[14] = input.nextInt(); 
+
+        //Converting the array to a string list.
+        var List = Arrays.toString(myArray);
+
+
+        //Display the array to the user
+        System.out.println("Our array has the following values: " + List);
+        
+
+        System.out.println("Enter any number to check if it is in the array: ");
+        var numInput = input.nextInt();
+
+        check(myArray, numInput);
+
+    }
+
+    private static void check(int[] arr, int valueToCheck) {
+
+        boolean test = false;
+        for (int num : arr) {
+
+            if (num == valueToCheck) {
+                test = true;
+                break;
+            }
+
+        }
+
+        // Print the result
+        if (test) {
+            System.out.println(valueToCheck + " is in the array.");
+        } else {
+            System.out.println(valueToCheck + " is not in the array.");
+        }
+
+    }
+}
